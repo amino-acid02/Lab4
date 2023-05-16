@@ -52,12 +52,11 @@ public class ExcelProvider {
         samples.add(sampleX.stream().mapToDouble(Double::doubleValue).toArray());
         samples.add(sampleY.stream().mapToDouble(Double::doubleValue).toArray());
         samples.add(sampleZ.stream().mapToDouble(Double::doubleValue).toArray());
-        calculator.setSamples(samples);
         
         return samples;
     }
 
-    public void writeToFile(DefaultTableModel table, DefaultTableModel cov_table, String pathToWrite) throws FileNotFoundException, IOException
+    public void writeToFile(DefaultTableModel table, DefaultTableModel cov_table, String path) throws FileNotFoundException, IOException
     {
         XSSFWorkbook workbook1 = new XSSFWorkbook();
         XSSFSheet sheet1 = workbook1.createSheet("Calculations");
@@ -92,7 +91,7 @@ public class ExcelProvider {
             }
         }
        
-        workbook1.write(new FileOutputStream(pathToWrite));
+        workbook1.write(new FileOutputStream(path));
         workbook1.close();
     }
 }

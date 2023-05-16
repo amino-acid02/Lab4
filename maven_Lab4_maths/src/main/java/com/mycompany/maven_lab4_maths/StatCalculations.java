@@ -11,14 +11,6 @@ import org.apache.commons.math3.stat.interval.ConfidenceInterval;
 public class StatCalculations {
     private ArrayList<double[]> samples = new ArrayList<>();
 
-    public ArrayList<double[]> getSamples() {
-        return samples;
-    }
-
-    public void setSamples(ArrayList<double[]> samples) {
-        this.samples = samples;
-    }
-
     public double calcGeomMean(double[] sample) {
         return StatUtils.geometricMean(sample);
     }
